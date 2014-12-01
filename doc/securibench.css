@@ -1,0 +1,207 @@
+/*
+body
+{font-family: Verdana, Helvetica, Arial, sans-serif;
+background-color: white;
+font-size: 1em;
+margin-left:  18em;
+margin-right: 18em;
+margin-top:   2em;}
+
+#list-menu {
+width: 132px;
+}
+
+
+#list-menu ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+
+#list-menu li {
+margin: 2px 0 0;
+}
+
+#list-menu a {
+display: block;
+width:120px;
+padding: 2px 2px 2px 10px;
+border: 1px solid #000000;
+background: #dcdcdc;
+text-decoration: none; 
+}
+
+#list-menu a:link, #list-menu a:active, #list-menu a:visited {
+    color: #000000; 
+}
+
+#list-menu a:hover {
+border: 1px solid #000000;
+background: #333333;
+color: #ffffff;
+text-decorations: bold;
+}
+
+//////
+	
+	body {
+        margin: 30px 20px 0px 20px;
+		}
+	
+	#main {
+		border:1px solid #000; 
+		background:#fff;
+		}
+
+	#main #menu {
+		border-left:1px solid #000; 
+		border-bottom:1px solid #000;
+		float:right;
+		width:230px;
+        background:white;
+		margin:0px 0px 10px 10px;
+		}
+		
+	p,h1,pre {
+		margin:0px 10px 10px 10px;
+		}
+		
+	h1 {
+		font-size:14px;
+		padding-top:10px;
+		}
+	
+	#menu p { font-size:10px}
+	
+*/
+
+
+
+body {
+    margin-left:100px;
+    margin-right:100px;
+
+	padding:0px;
+//    font-family:verdana, arial, helvetica, sans-serif;
+    font:11px/15px verdana, arial, helvetica, sans-serif;
+	color:#333;
+	background-color:white;
+    text-align: justify;
+	}
+
+p {
+    text-indent: 0px
+	color:#333;
+	background-color:white;
+	}
+
+
+ul {font:11px verdana, arial, helvetica, sans-serif;}
+
+h1 {
+	margin:0px 0px 15px 0px;
+	padding:0px;
+	font-size:28px;
+	line-height:28px;
+	font-weight:900;
+	color:#ccc;
+	}
+#Content>p {margin:0px;}
+#Content>p+p {margin-top:14px;text-indent:0px;}
+
+a {
+	color:#09c;
+	font-size:11px;
+	text-decoration:none;
+	font-weight:600;
+	font-family:verdana, arial, helvetica, sans-serif;
+	}
+a:link {color:#09c;}
+a:visited {color:#07a;}
+a:hover {background-color:#eee;}
+
+#Header {
+    margin:50px -80px 10px -80px;
+    padding:17px 20px 20px 20px;
+	/* For IE5/Win's benefit height = [correct height] + [top padding] + [top and bottom border widths] */
+	height:33px; /* 14px + 17px + 2px = 33px */
+	border-style:solid;
+	border-color:black;
+    border-width:1px 1px; /* top and bottom borders: 1px; left and right borders: 0px */
+	line-height:11px;
+	background-color:#eee;
+    font-size:20px;
+    font-weight:900;
+    text-align: right;
+
+/* Here is the ugly brilliant hack that protects IE5/Win from its own stupidity. 
+Thanks to Tantek Celik for the hack and to Eric Costello for publicizing it. 
+IE5/Win incorrectly parses the "\"}"" value, prematurely closing the style 
+declaration. The incorrect IE5/Win value is above, while the correct value is 
+below. See http://glish.com/css/hacks.asp for details. */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	height:14px; /* the correct height */
+	}
+/* I've heard this called the "be nice to Opera 5" rule. Basically, it feeds correct 
+length values to user agents that exhibit the parsing error exploited above yet get 
+the CSS box model right and understand the CSS2 parent-child selector. ALWAYS include
+a "be nice to Opera 5" rule every time you use the Tantek Celik hack (above). */
+body>#Header {height:14px;}
+
+#Content {
+    margin:30px 50px 50px 200px;
+	padding:10px;
+	}
+
+#Menu {
+	position:absolute;
+    top:120px;
+	left:20px;
+	width:172px;
+	padding:10px;
+	background-color:#eee;
+	border:1px dashed #999;
+	line-height:17px;
+/* Again, the ugly brilliant hack. */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+	width:150px;
+	}
+/* Again, "be nice to Opera 5". */
+body>#Menu {width:150px;}
+
+ table.servicesT { 
+    font-family: Verdana;
+    font-weight: normal;
+    color: #404040;
+    background-color: #fafafa;
+    border: 1px #6699CC solid;
+    //border-collapse: collapse;
+    border-spacing: 40px;
+    padding: 40px;
+    cellpadding: 10px;
+    margin-top: 0px;
+    border-spacing: 5px;
+    font-size: 10px;
+    }
+    
+.pretty_table { 
+    font-family: Verdana;
+    font-weight: normal;
+    color: #404040;
+    background-color: #fafafa;
+    border: 1px #6699CC solid;
+    border-collapse: collapse;
+    border-spacing: 40px;
+    border-style: solid;
+    padding: 40px;
+    cellpadding: 20px;
+    margin:12px; 
+    margin-top: 0px;
+    border-spacing: 15px;
+    font-size: 10px;
+}
+    
+td { border: 1px dashed gray; padding: 6px; }
+    

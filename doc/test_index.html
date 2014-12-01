@@ -1,0 +1,211 @@
+<HTML>
+  <HEAD>
+    <STYLE>
+    body {
+      font: normal 11px auto "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+      color: #4f6b72;
+      background: #E6EAE9;
+    }
+
+a {
+  color: #c75f3e;
+}
+
+#mytable {
+ width: 900px;
+ padding: 0;
+ margin: 0;
+ border: 3px solid #C1DAD7;
+}
+
+caption {
+  padding: 0 0 5px 0;
+  width: 700px;  
+  font: italic 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+
+th {
+  font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  color: #4f6b72;
+  border-right: 1px solid #C1DAD7;
+  border-bottom: 1px solid #C1DAD7;
+  border-top: 1px solid #C1DAD7;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 6px 6px 6px 12px;
+  background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+}
+
+th.nobg {
+  border-top: 0;
+  border-left: 0;
+  border-right: 1px solid #C1DAD7;
+  background: none;
+}
+
+td {
+  border-right: 1px solid #C1DAD7;
+  border-bottom: 1px solid #C1DAD7;
+  background: #fff;
+  padding: 6px 6px 6px 12px;
+  color: #4f6b72;
+}
+
+
+td.alt {
+  background: #F5FAFA;
+  color: #797268;
+}
+
+th.spec {
+ border-left: 1px solid #C1DAD7;
+ border-top: 0;
+ background: #FFFFCC;
+ font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+th.specalt {
+ border-left: 1px solid #C1DAD7;
+ border-top: 0;
+ background: #f5fafa url(images/bullet2.gif) no-repeat;
+ font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+ color: #797268;
+}
+</STYLE>
+  </HEAD>
+<CENTER>
+<TABLE id="mytable" STYLE="table>tr {border-style: dashed;}">
+<TH>Name</TH><TH>Description</TH><TH>Bug count</TH></TH>
+<tr><th COLSPAN=3 scope="row" class="spec">arrays</th></tr> 
+<TR><TD  class=alt >Arrays1.java</TD><TD  class=alt >a simple array test                                         </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Arrays2.java</TD><TD  class=alt >a more complex array test                                   </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Arrays3.java</TD><TD  class=alt >a more complex array test                                   </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Arrays4.java</TD><TD  class=alt >a test of array indeces                                     </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Arrays5.java</TD><TD  class=alt >strong updates to array elements                            </TD><TD  class=alt  ALIGN=Center>0</TD></TR> 
+<TR><TD  class=alt >Arrays6.java</TD><TD  class=alt >strong updates to array elements                            </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Arrays7.java</TD><TD  class=alt >test of array initializers                                  </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Arrays8.java</TD><TD  class=alt >test of array initializers                                  </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Arrays9.java</TD><TD  class=alt >multidimentional arrays                                     </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Arrays10.java</TD><TD  class=alt >comple multidimentional array test                          </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">basic</th></tr> 
+
+<TR><TD >Basic1.java</TD><TD >very simple XSS                                             </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic2.java</TD><TD >XSS combined with a simple conditional                      </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic3.java</TD><TD >simple derived string test                                  </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic4.java</TD><TD >test path sensitivity just a bit                            </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic5.java</TD><TD >moderately complex test of derived strings                  </TD><TD  ALIGN=Center>3</TD></TR> 
+
+<TR><TD >Basic6.java</TD><TD >complex test of derived strings                             </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic7.java</TD><TD >complex test of derived strings involving a string buffer...</TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic8.java</TD><TD >test of complex conditionals                                </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic9.java</TD><TD >chains of value assignments                                 </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic10.java</TD><TD >chains of value assignments                                 </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Basic11.java</TD><TD >a simple false positive because of two calls to String.to...</TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Basic12.java</TD><TD >a simple conditional; both branches should be taken         </TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Basic13.java</TD><TD >use getInitParameter instead                                </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic14.java</TD><TD >use the servlet context and casts                           </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic15.java</TD><TD >test casts more exhaustively                                </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Basic16.java</TD><TD >simple heap-allocated data strucure                         </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic17.java</TD><TD >simple heap-allocated data strucure                         </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic18.java</TD><TD >protect agains simple loop unrolling                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic19.java</TD><TD >simple SQL injection with prepared statements               </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic20.java</TD><TD >simple SQL injection                                        </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Basic21.java</TD><TD >SQL injection with less commonly used methods               </TD><TD  ALIGN=Center>4</TD></TR> 
+<TR><TD >Basic22.java</TD><TD >basic path traversal                                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic23.java</TD><TD >path traversal                                              </TD><TD  ALIGN=Center>3</TD></TR> 
+<TR><TD >Basic24.java</TD><TD >unsafe redirect                                             </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic25.java</TD><TD >test getParameterValues                                     </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Basic26.java</TD><TD >test getParameterMap                                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic27.java</TD><TD >test getParameterMap                                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic28.java</TD><TD >complicated control flow                                    </TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Basic29.java</TD><TD >recursive data structures                                   </TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Basic30.java</TD><TD >field sensitivity                                           </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Basic31.java</TD><TD >values obtained from cookies                                </TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Basic32.java</TD><TD >values obtained from headers                                </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic33.java</TD><TD >values obtained from headers                                </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic34.java</TD><TD >values obtained from headers                                </TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Basic35.java</TD><TD >values obtained from HttpServletRequest                     </TD><TD  ALIGN=Center>6</TD></TR> 
+
+<TR><TD >Basic36.java</TD><TD >values obtained from HttpServletRequest input stream        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic37.java</TD><TD >StringTokenizer test                                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic38.java</TD><TD >StringTokenizer test with a false positive                  </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic39.java</TD><TD >StringTokenizer test                                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic40.java</TD><TD >MultipartRequest test                                       </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Basic41.java</TD><TD >use getInitParameter instead                                </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Basic42.java</TD><TD >use getInitParameterNames                                   </TD><TD  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">collections</th></tr> 
+<TR><TD  class=alt >Collections1.java</TD><TD  class=alt >simple collection deposit/retrieve                          </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Collections2.java</TD><TD  class=alt >collection deposit/retrieve, check for false positives      </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Collections3.java</TD><TD  class=alt >collection of collections                                   </TD><TD  class=alt  ALIGN=Center>2</TD></TR> 
+<TR><TD  class=alt >Collections4.java</TD><TD  class=alt >test of iterators                                           </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Collections5.java</TD><TD  class=alt >test of iterators                                           </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Collections6.java</TD><TD  class=alt >test of maps                                                </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Collections7.java</TD><TD  class=alt >test of map iterators                                       </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<tr><th COLSPAN=3 scope="row" class="spec">factories</th></tr> 
+<TR><TD >Factories1.java</TD><TD >simple factory problem with toLowerCase                     </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Factories2.java</TD><TD >simple factory problem with String.toString                 </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Factories3.java</TD><TD >factory problem with a string wrapper                       </TD><TD  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">inter</th></tr> 
+<TR><TD  class=alt >Inter1.java</TD><TD  class=alt >simple id method call                                       </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Inter2.java</TD><TD  class=alt >simple id method call                                       </TD><TD  class=alt  ALIGN=Center>2</TD></TR> 
+<TR><TD  class=alt >Inter3.java</TD><TD  class=alt >chains of method calls                                      </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Inter4.java</TD><TD  class=alt >store stuff in a field                                      </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Inter5.java</TD><TD  class=alt >store stuff in a field                                      </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Inter6.java</TD><TD  class=alt >bug in class initializer                                    </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Inter7.java</TD><TD  class=alt >bug in class initializer                                    </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">pred</th></tr> 
+<TR><TD >Pred1.java</TD><TD >simple if(false) test                                       </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >Pred2.java</TD><TD >simple correlated tests                                     </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >Pred3.java</TD><TD >simple correlated tests                                     </TD><TD  ALIGN=Center>0</TD></TR> 
+
+<TR><TD >Pred4.java</TD><TD >correlated test with an int variable                        </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Pred5.java</TD><TD >correlated test with a complex conditional                  </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Pred6.java</TD><TD >correlated test with addition                               </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >Pred7.java</TD><TD >correlated test with multiple variables                     </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >Pred8.java</TD><TD >using an array element as in a predicate                    </TD><TD  ALIGN=Center>1</TD></TR> 
+
+<TR><TD >Pred9.java</TD><TD >using an array element as in a predicate                    </TD><TD  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">reflection</th></tr> 
+<TR><TD  class=alt >Refl1.java</TD><TD  class=alt >reflective call of a method                                 </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Refl2.java</TD><TD  class=alt >reflectively access a field                                 </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Refl3.java</TD><TD  class=alt >reflectively create a class and access its field            </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Refl4.java</TD><TD  class=alt >bug in class initializer                                    </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">sanitizers</th></tr> 
+<TR><TD >Sanitizers1.java</TD><TD >simple sanitization check                                   </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Sanitizers2.java</TD><TD >simple sanitization check                                   </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >Sanitizers3.java</TD><TD >safe redirect                                               </TD><TD  ALIGN=Center>0</TD></TR> 
+
+<TR><TD >Sanitizers4.java</TD><TD >buggy sanitizer                                             </TD><TD  ALIGN=Center>2</TD></TR> 
+<TR><TD >Sanitizers5.java</TD><TD >encode and then decode                                      </TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >Sanitizers6.java</TD><TD >sanitizers for directory traversal                          </TD><TD  ALIGN=Center>0</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">session</th></tr> 
+<TR><TD  class=alt >Session1.java</TD><TD  class=alt >simple session test                                         </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+
+<TR><TD  class=alt >Session2.java</TD><TD  class=alt >test of session false positives                             </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<TR><TD  class=alt >Session3.java</TD><TD  class=alt >test of session enumeration                                 </TD><TD  class=alt  ALIGN=Center>1</TD></TR> 
+<tr><th COLSPAN=3 scope="row" class="spec">strong_updates</th></tr> 
+<TR><TD >StrongUpdates1.java</TD><TD >simple test of strong updates                               </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >StrongUpdates2.java</TD><TD >simple test of strong updates                               </TD><TD  ALIGN=Center>0</TD></TR> 
+
+<TR><TD >StrongUpdates3.java</TD><TD >strong updates in data structures                           </TD><TD  ALIGN=Center>0</TD></TR> 
+<TR><TD >StrongUpdates4.java</TD><TD >a more tricky test of when we can't assume a strong updat...</TD><TD  ALIGN=Center>1</TD></TR> 
+<TR><TD >StrongUpdates5.java</TD><TD >making a shared servlet field thread-local                  </TD><TD  ALIGN=Center>0</TD></TR> 
+</TABLE> 
+</CENTER> 
+</BODY> 
+</HTML> 
