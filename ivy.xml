@@ -2,13 +2,15 @@
     <info organisation="io.github.too4words" module="securibench-micro"/>
     <configurations>
       <conf name="tasks" description="Ant tasks"/>
+      <conf name="compile" description="Required to compile application"/>
+      <conf name="runtime" description="Additional run-time dependencies"/>
     </configurations>
     <dependencies>
-        <dependency org="xdoclet" name="xdoclet" rev="1.2.3"/>
-	<dependency org="xdoclet" name="xdoclet-web-module" rev="1.2.3"/>
-	<dependency org="xjavadoc" name="xjavadoc" rev="1.1"/>
-	<dependency org="de.java2html" name="java2html" rev="5.0"/>
-	<dependency org="javax.servlet" name="javax.servlet-api" rev="3.1.0"/>
-	<dependency org="servlets.com" name="cos" rev="05Nov2002"/>
+        <dependency org="xdoclet" name="xdoclet" rev="1.2.3" conf="tasks->default"/>
+	<dependency org="xdoclet" name="xdoclet-web-module" rev="1.2.3" conf="tasks->default"/>
+	<dependency org="xjavadoc" name="xjavadoc" rev="1.1" conf="tasks->default"/>
+	<dependency org="de.java2html" name="java2html" rev="5.0" conf="tasks->default"/>
+        <dependency org="javax.servlet" name="javax.servlet-api" rev="3.1.0" conf="tasks->default;compile->default" />
+	<dependency org="servlets.com" name="cos" rev="05Nov2002" conf="compile->default;runtime->default" />
     </dependencies>
 </ivy-module>
