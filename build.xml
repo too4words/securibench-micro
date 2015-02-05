@@ -1,41 +1,19 @@
 <!-- $Id: build.xml,v 1.10 2006/01/04 06:27:18 livshits Exp $ -->
-<project name="Securibench Micro" default="cleandist" basedir=".">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="Securibench Micro" default="cleandist" basedir=".">
 	<property environment="currentenv" />
 	<property file="build.properties" />
 	<property name="rootdir" value="." />
 
-	<path id="class.path">
-		<pathelement path="${currentenv.classpath}" />
-		<fileset dir="./lib">
-			<include name="**/*.jar" />
-		</fileset>	
-	</path>
-
-	<!-- xdoclet paths -->
-	<property name="xdoclet.jar" value="${xdoclet}/xdoclet-1.2.3.jar" />
-	<property name="webdoclet.jar" value="${xdoclet}/xdoclet-web-module-1.2.3.jar" />
-	<property name="xjavadoc.jar" value="${xdoclet}/xjavadoc-1.1.jar" />
-	<property name="log4j.jar" value="${xdoclet}/log4j.jar" />
-	<property name="commons.collections.jar" value="${xdoclet}/commons-collections-2.0.jar" />
-	<property name="commons.logging.jar" value="${xdoclet}/commons-logging.jar" />
-	<property name="j2ee.jar" value="${rootdir}/lib/j2ee.jar" />
-	<property name="src.dir" value="${rootdir}/src" />	
+	<ivy:resolve/>
+	<ivy:cachepath pathid="ivy.dependencies.path" conf="tasks"/>
+	
+	<property name="src.dir" value="${rootdir}/src" />
 	<property name="appDeployDir" value="${tomcat.home}/webapps/${web.context}"/>
 	<property name="webdav" value="${tomcat.home}/webapps/${webdav.context}"/>
-
-	<path id="webdoclet.classpath">
-		<pathelement path="${xdoclet.jar}" />
-		<pathelement path="${webdoclet.jar}" />
-		<pathelement path="${xjavadoc.jar}" />
-		<pathelement path="${commons.collections.jar}" />
-		<pathelement path="${commons.logging.jar}" />
-		<pathelement path="${log4j.jar}" />
-		<pathelement path="${j2ee.jar}" />
-	</path>
 	
 	<!-- additional tasks -->
-	<taskdef name="xdoclet" classname="xdoclet.modules.web.WebDocletTask" classpathref="webdoclet.classpath" />
-	<taskdef name="java2html" classname="de.java2html.anttasks.Java2HtmlTask" classpath="${rootdir}/lib/java2html.jar" />
+	<taskdef name="xdoclet" classname="xdoclet.modules.web.WebDocletTask" classpathref="ivy.dependencies.path" />
+	<taskdef name="java2html" classname="de.java2html.anttasks.Java2HtmlTask" classpathref="ivy.dependencies.path" />
 
 	<!-- CLEAN -->
 	<target name="clean">
@@ -92,7 +70,7 @@
 
 	<target name="compile">
 		<echo message="Compiling Securibench Micro..." />
-		<javac verbose="false" classpathref="class.path" srcdir="${src.dir}" destdir="${appDeployDir}/WEB-INF/classes" />
+		<javac verbose="false" classpathref="ivy.dependencies.path" srcdir="${src.dir}" destdir="${appDeployDir}/WEB-INF/classes" />
 	</target>
 
 	<!-- CLEANDIST -->
