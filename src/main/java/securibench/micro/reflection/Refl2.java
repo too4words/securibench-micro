@@ -21,6 +21,7 @@
  */
 package securibench.micro.reflection;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
@@ -49,11 +50,10 @@ public class Refl2 extends BasicTestCase implements MicroTestCase {
     }
     
     private void f(ServletResponse resp) throws IOException, SecurityException, NoSuchFieldException, ClassNotFoundException, IllegalArgumentException, IllegalAccessException {
-        PrintWriter writer = resp.getWriter();
         Field field = Class.forName("securibench.micro.reflection.Refl2").getField("name"); 
         String myName = (String) field.get(this); 
         
-        writer.println(myName);         /* BAD */        
+        new File(myName);         /* BAD */        
     }
 
     public String getDescription() {

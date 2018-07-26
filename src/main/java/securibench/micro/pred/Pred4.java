@@ -21,6 +21,7 @@
  */
 package securibench.micro.pred;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -41,8 +42,7 @@ public class Pred4 extends BasicTestCase implements MicroTestCase {
         String name = req.getParameter(FIELD_NAME);
         
         if(x == 3) {    // should always be taken
-            PrintWriter writer = resp.getWriter();
-            writer.println(name);              /* BAD */     // nothing bad gets here
+            new File(name);              /* BAD */     // nothing bad gets here
         }
     }
 

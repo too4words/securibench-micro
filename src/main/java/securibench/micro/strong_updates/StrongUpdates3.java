@@ -21,6 +21,7 @@
  */
 package securibench.micro.strong_updates;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -45,8 +46,7 @@ public class StrongUpdates3 extends BasicTestCase implements MicroTestCase {
         w.value = name;
         w.value = "abc";
 
-        PrintWriter writer = resp.getWriter();
-        writer.println(w.value);              /* OK */
+        new File(w.value);              /* OK */
     }
 
     public String getDescription() {

@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -36,8 +37,7 @@ public class Basic14 extends BasicTestCase implements MicroTestCase {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         for(Enumeration e = getServletConfig().getInitParameterNames(); e.hasMoreElements(); ) {
             String s  = (String) e.nextElement();
-            PrintWriter writer = resp.getWriter();  
-            writer.println(s);                      /* BAD */
+            new File(s);                      /* BAD */
         }           
     }
     

@@ -21,6 +21,7 @@
  */
 package securibench.micro.aliasing;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -40,9 +41,8 @@ public class Aliasing1 extends BasicTestCase implements MicroTestCase {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
        String name = req.getParameter(FIELD_NAME);
        String str = name;
-              
-       PrintWriter writer = resp.getWriter();
-       writer.println(str);                              /* BAD */
+
+       new File(str);                              /* BAD */
     }
     
     public String getDescription() {

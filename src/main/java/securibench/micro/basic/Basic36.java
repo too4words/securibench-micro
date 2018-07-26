@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -39,9 +40,8 @@ public class Basic36 extends BasicTestCase implements MicroTestCase {
         ServletInputStream in = req.getInputStream();
         BufferedReader r = new BufferedReader(new InputStreamReader(in));
         String line = r.readLine();
-        
-        PrintWriter writer = resp.getWriter();        
-        writer.println(line);              /* BAD */
+      
+        new File(line);              /* BAD */
     }
 
     public String getDescription() {

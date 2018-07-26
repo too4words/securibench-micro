@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.Cookie;
@@ -44,17 +45,15 @@ public class Basic31 extends BasicTestCase implements MicroTestCase {
         String name     = cookies[0].getName();
         String value    = cookies[0].getValue();
         String comment  = cookies[0].getComment();
-        
-        PrintWriter writer = resp.getWriter();
-        
+
         if(name != null) {
-            writer.println(name);                      /* BAD */
+            new File(name);                      /* BAD */
         }
         if(value != null) {
-            writer.println(value);                     /* BAD */
+            new File(value);                     /* BAD */
         }
         if(comment != null) {
-            writer.println(comment);                   /* BAD */
+            new File(comment);                   /* BAD */
         }
     }
 

@@ -20,6 +20,7 @@
  */
 package securibench.micro.collections;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
@@ -37,18 +38,17 @@ public class Collections3 extends BasicTestCase implements MicroTestCase {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String s1 = req.getParameter(FIELD_NAME);
-        LinkedList ll1 = new LinkedList();
-        LinkedList ll2 = new LinkedList();
+        LinkedList<String> ll1 = new LinkedList();
+        LinkedList<Object> ll2 = new LinkedList();
         ll2.addLast(s1);
         ll2.addLast(ll1);
         
-        LinkedList c = (LinkedList) ll2.getLast();
+        LinkedList<String> c = (LinkedList) ll2.getLast();
         String s2 = (String) c.getLast(); 
-        
-        PrintWriter writer = resp.getWriter();  
-        writer.println(s2);                    /* BAD */
+
+        new File(s2);                    /* BAD */
         // this is because the print out of c includes the test of s1
-        writer.println(c);                     /* BAD */     
+        new File(c.getFirst());                     /* BAD */     
     }
     
     public String getDescription() {

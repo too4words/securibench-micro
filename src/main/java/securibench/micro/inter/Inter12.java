@@ -21,6 +21,7 @@
  */
 package securibench.micro.inter;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
@@ -46,13 +47,12 @@ public class Inter12 extends BasicTestCase implements MicroTestCase {
         
         foo("abc");
         bar(s1);
-        
-        PrintWriter writer = resp.getWriter();
+
         String s2 = (String) COLLECTION1.iterator().next();
         String s3 = (String) COLLECTION2.iterator().next();
         
-        writer.println(s2);                    /* BAD */
-        writer.println(s3);                    /* OK */
+        new File(s2);                    /* BAD */
+        new File(s3);                    /* OK */
     }
     
 	private void foo(Object s) {

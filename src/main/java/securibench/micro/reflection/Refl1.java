@@ -21,6 +21,7 @@
  */
 package securibench.micro.reflection;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.InvocationTargetException;
@@ -39,7 +40,6 @@ public class Refl1 extends BasicTestCase implements MicroTestCase {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String s1 = req.getParameter(FIELD_NAME);        
-        PrintWriter writer = resp.getWriter();
         
         Method idMethod = null;
         try {
@@ -53,9 +53,9 @@ public class Refl1 extends BasicTestCase implements MicroTestCase {
                 }
             }
             // a fancy way to call id(s1, writer)
-            Object o = idMethod.invoke(this, new Object[] {s1, writer});
+            Object o = idMethod.invoke(this, new Object[] {s1});
             String s2 = (String) o;
-            writer.println(s2);         /* BAD */ 
+            new File(s2);         /* BAD */ 
         } catch( ClassNotFoundException e ) {
             e.printStackTrace();
         } catch (IllegalArgumentException e) {
@@ -67,7 +67,7 @@ public class Refl1 extends BasicTestCase implements MicroTestCase {
         }         
     }
     
-    public String id(String string, PrintWriter writer) {
+    public String id(String string) {
         return string;
     }
 

@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.BitSet;
@@ -45,8 +46,7 @@ public class Basic8 extends BasicTestCase implements MicroTestCase {
                             
                         }
                     } else {
-                        PrintWriter writer = resp.getWriter();
-                        writer.println(str);    /* BAD */
+                        new File(str);    /* BAD */
                     }
                 }
             }

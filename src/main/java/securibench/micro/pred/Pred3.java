@@ -21,6 +21,7 @@
  */
 package securibench.micro.pred;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
@@ -45,8 +46,7 @@ public class Pred3 extends BasicTestCase implements MicroTestCase {
         }
         
         if(!choice) {
-            PrintWriter writer = resp.getWriter();
-            writer.println(name);              /* OK */     // nothing bad gets here
+            new File(name);              /* OK */     // nothing bad gets here
         }
     }
 

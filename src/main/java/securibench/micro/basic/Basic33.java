@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -37,9 +38,8 @@ public class Basic33 extends BasicTestCase implements MicroTestCase {
         Enumeration e = req.getHeaders("Accept-Language");
         while(e.hasMoreElements()) {
             String header = (String) e.nextElement();
-         
-            PrintWriter writer = resp.getWriter();            
-            writer.println(header);                      /* BAD */            
+          
+            new File(header);                      /* BAD */            
         }        
     }
 

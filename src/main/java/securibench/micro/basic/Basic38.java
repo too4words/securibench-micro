@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
@@ -40,10 +41,9 @@ public class Basic38 extends BasicTestCase implements MicroTestCase {
         StringTokenizer tok1 = new StringTokenizer(name, "\t");
         StringTokenizer tok2 = new StringTokenizer("abc\tdef", "\t");
         
-        while(tok1.hasMoreTokens() && tok2.hasMoreElements()) {
-            PrintWriter writer = resp.getWriter();        
-            writer.println(tok1.nextToken());              /* BAD */
-            writer.println(tok2.nextToken());              /* OK */
+        while(tok1.hasMoreTokens() && tok2.hasMoreElements()) {     
+            new File(tok1.nextToken());              /* BAD */
+            new File(tok2.nextToken());              /* OK */
         }
     }
 

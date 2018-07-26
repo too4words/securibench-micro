@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -40,9 +41,8 @@ public class Basic27 extends BasicTestCase implements MicroTestCase {
        while(e.hasMoreElements()) {
            String name = (String) e.nextElement();
            if(name.equals(FIELD_NAME)) {
-               PrintWriter writer = resp.getWriter();
                String value = req.getParameter(name);
-               writer.println("value: " + value);           /* BAD */
+               new File("value: " + value);           /* BAD */
            }
        }
     }

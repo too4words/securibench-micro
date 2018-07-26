@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
@@ -42,9 +43,8 @@ public class Basic9 extends BasicTestCase implements MicroTestCase {
         //String s4 = s1;
         String s5 = choice ? s3 : s2;
         String s6 = s5;
-        
-        PrintWriter writer = resp.getWriter();
-        writer.println(s6);    /* BAD */
+
+        new File(s6);    /* BAD */
     }
     
     public String getDescription() {

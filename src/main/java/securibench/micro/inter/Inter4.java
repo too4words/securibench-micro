@@ -21,6 +21,7 @@
  */
 package securibench.micro.inter;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletResponse;
@@ -44,8 +45,7 @@ public class Inter4 extends BasicTestCase implements MicroTestCase {
     }
     
     private void f(ServletResponse resp) throws IOException {
-        PrintWriter writer = resp.getWriter();
-        writer.println(this.name);         /* BAD */        
+        new File(this.name);         /* BAD */        
     }
 
     public String getDescription() {

@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -36,15 +37,14 @@ public class Basic35 extends BasicTestCase implements MicroTestCase {
       protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Enumeration e = req.getHeaderNames();
         while(e.hasMoreElements()) {
-            PrintWriter writer = resp.getWriter();
             // I believe these can be forged also
             // TODO: double-check this
-            writer.println(req.getProtocol());                /* BAD */
-            writer.println(req.getScheme());                  /* BAD */
-            writer.println(req.getAuthType());                /* BAD */
-            writer.println(req.getQueryString());             /* BAD */
-            writer.println(req.getRemoteUser());              /* BAD */
-            writer.println(req.getRequestURL());              /* BAD */
+            new File(req.getProtocol());                /* BAD */
+            new File(req.getScheme());                  /* BAD */
+            new File(req.getAuthType());                /* BAD */
+            new File(req.getQueryString());             /* BAD */
+            new File(req.getRemoteUser());              /* BAD */
+            new File(req.getRequestURL().toString());              /* BAD */
         }        
     }
 

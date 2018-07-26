@@ -20,6 +20,7 @@
  */
 package securibench.micro.collections;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -41,11 +42,10 @@ public class Collections5 extends BasicTestCase implements MicroTestCase {
         ArrayList ll = new ArrayList();
         ll.add(name);
         
-        for(Iterator iter = ll.iterator(); iter.hasNext();) {
-            PrintWriter writer = resp.getWriter();
-            Object o = iter.next();
+        for(Iterator<String> iter = ll.iterator(); iter.hasNext();) {
+            String o = iter.next();
             
-            writer.println(o);                    /* BAD */
+            new File(o);                    /* BAD */
         }
     }
     

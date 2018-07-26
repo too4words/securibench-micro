@@ -21,6 +21,7 @@
  */
 package securibench.micro.reflection;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.lang.reflect.Field;
@@ -43,15 +44,14 @@ public class Refl3 extends BasicTestCase implements MicroTestCase {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         name = req.getParameter(FIELD_NAME);
-        PrintWriter writer = resp.getWriter();
-        
+
         try {
             Class clazz = Class.forName("securibench.micro.reflection.Refl3$ReflectivelyCreated");
             ReflectivelyCreated rc = (ReflectivelyCreated) clazz.newInstance();
             Field field = clazz.getField("value");
             field.set(rc, name);
             
-            writer.println(rc.value);               /* BAD */
+            new File(rc.value);               /* BAD */
         } catch (ClassNotFoundException e) {
             System.err.println("An error occurred (1)");
         } catch (InstantiationException e) {

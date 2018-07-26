@@ -21,6 +21,7 @@
  */
 package securibench.micro.factories;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -49,11 +50,9 @@ public class Factories3 extends BasicTestCase implements MicroTestCase {
         
         StringWrapper w1 = new StringWrapper(s1);
         StringWrapper w2 = new StringWrapper("abc");
-            
-        PrintWriter writer = resp.getWriter();
-        
-        writer.println(w1.toString());    /* BAD */
-        writer.println(w2.toString());    /* OK */
+
+        new File(w1.toString());    /* BAD */
+        new File(w2.toString());    /* OK */
     }
     
     public String getDescription() {

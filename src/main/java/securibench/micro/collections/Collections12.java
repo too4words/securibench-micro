@@ -20,6 +20,7 @@
  */
 package securibench.micro.collections;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.LinkedList;
@@ -41,10 +42,9 @@ public class Collections12 extends BasicTestCase implements MicroTestCase {
         String s1 = req.getParameter(FIELD_NAME);
         LinkedList c1 = new LinkedList();
         c1.addLast(s1);
-        Object[] array = c1.toArray();
-        
-        PrintWriter writer = resp.getWriter();  
-      	writer.println(array[0]);                    /* BAD */
+        String[] array = (String[])c1.toArray();
+
+      	new File(array[0]);                    /* BAD */
     }
     
     public String getDescription() {

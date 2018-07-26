@@ -20,6 +20,7 @@
  */
 package securibench.micro.collections;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Collection;
@@ -33,8 +34,7 @@ import javax.servlet.ServletResponse;
 class Collections11b {
     protected void foo(Object o, ServletResponse resp) throws IOException {
     	Collection c = (Collection) o;
-        String str = c.toString();
-        PrintWriter writer = resp.getWriter();  
-        writer.println(str);                    /* BAD */
+        String str = (String)c.iterator().next();
+        new File(str);                    /* BAD */
     }
 }

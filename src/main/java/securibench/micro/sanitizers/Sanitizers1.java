@@ -21,6 +21,7 @@
  */
 package securibench.micro.sanitizers;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -34,19 +35,17 @@ import securibench.micro.MicroTestCase;
  *  */
 public class Sanitizers1 extends BasicTestCase implements MicroTestCase {
     private static final String FIELD_NAME = "name";
-    private PrintWriter writer;
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter(FIELD_NAME);
         String clean = clean(name);
-        
-        writer = resp.getWriter();
+
         resp.setContentType("text/html");
         
-        writer.println("<html>");
-        writer.println("<b>" + name  + "</b>");                  			/* BAD */
-        writer.println("<b>" + clean + "</b>");                  			/* OK */
-        writer.println("</html>");
+        new File("<html>");
+        new File("<b>" + name  + "</b>");                  			/* BAD */
+        new File("<b>" + clean + "</b>");                  			/* OK */
+        new File("</html>");
         
     }
     

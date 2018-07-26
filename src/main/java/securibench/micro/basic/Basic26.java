@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Iterator;
@@ -40,10 +41,9 @@ public class Basic26 extends BasicTestCase implements MicroTestCase {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
        Map m = req.getParameterMap();
        for(Iterator iter = m.entrySet().iterator(); iter.hasNext();) {
-           Map.Entry e = (Entry) iter.next();
+           Map.Entry<String, String> e = (Entry) iter.next();
            if(e.getKey().equals(FIELD_NAME)) {
-               PrintWriter writer = resp.getWriter();
-               writer.println(e.getValue());        
+               new File(e.getValue());        
            }           
        }
     }

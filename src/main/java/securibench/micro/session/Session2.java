@@ -21,6 +21,7 @@
  */
 package securibench.micro.session;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -42,10 +43,9 @@ public class Session2 extends BasicTestCase implements MicroTestCase {
        session.setAttribute("name", name);
        String s2 = (String) session.getAttribute("name");
        String s3 = (String) session.getAttribute("nonsense");
-       PrintWriter writer = resp.getWriter();
-       
-       writer.println(s2);                      /* BAD */
-       writer.println(s3);                      /* OK */
+
+       new File(s2);                      /* BAD */
+       new File(s3);                      /* OK */
     }
     
     public String getDescription() {

@@ -21,6 +21,7 @@
  */
 package securibench.micro.session;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -46,8 +47,7 @@ public class Session3 extends BasicTestCase implements MicroTestCase {
            String attrName = (String) e.nextElement();
            String attrValue = (String) session.getAttribute(attrName);
 
-           PrintWriter writer = resp.getWriter();
-           writer.println(attrValue);                      /* BAD */
+           new File(attrValue);                      /* BAD */
        }
     }
     

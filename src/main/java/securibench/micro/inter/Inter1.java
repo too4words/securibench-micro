@@ -21,6 +21,7 @@
  */
 package securibench.micro.inter;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -40,10 +41,9 @@ public class Inter1 extends BasicTestCase implements MicroTestCase {
         
         String s2 = id(s1);
         String s3 = id("abc");
-        
-        PrintWriter writer = resp.getWriter();  
-        writer.println(s2);                    /* BAD */
-        writer.println(s3);                    /* OK */
+
+        new File(s2);                    /* BAD */
+        new File(s3);                    /* OK */
     }
     
     private String id(String string) {

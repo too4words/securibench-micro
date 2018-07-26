@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Locale;
@@ -38,9 +39,8 @@ public class Basic25 extends BasicTestCase implements MicroTestCase {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
        String[] s = req.getParameterValues(FIELD_NAME);
        String name = s[0].toLowerCase(Locale.UK);
-       
-       PrintWriter writer = resp.getWriter();
-       writer.println(name);                    /* BAD */
+
+       new File(name);                    /* BAD */
     }
     
     public String getDescription() {

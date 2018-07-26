@@ -21,6 +21,7 @@
  */
 package securibench.micro.inter;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -48,8 +49,7 @@ public class Inter13 extends BasicTestCase implements MicroTestCase {
 		if(i != 0) {
 			f(s1, i-1, resp);
 		} else {
-	        PrintWriter writer = resp.getWriter();
-	        writer.println(s1);                    /* BAD */
+	        new File(s1);                    /* BAD */
 		}
 
 		

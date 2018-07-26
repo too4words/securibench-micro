@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -34,10 +35,8 @@ import securibench.micro.MicroTestCase;
 public class Basic32 extends BasicTestCase implements MicroTestCase {
       protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String header = req.getHeader("Accept-Language");
-        
-        PrintWriter writer = resp.getWriter();
-        
-        writer.println(header);                      /* BAD */
+
+        new File(header);                      /* BAD */
     }
 
     public String getDescription() {

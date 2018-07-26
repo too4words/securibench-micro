@@ -19,6 +19,7 @@
  */
 package securibench.micro.aliasing;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -37,21 +38,20 @@ public class Aliasing6 extends BasicTestCase implements MicroTestCase {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
        String[] names = req.getParameterValues(FIELD_NAME);
-       Object 
+       String 
        	o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11, o12, o13, o14, o15, o16, o17, o18, o19, o20,
        	o21, o22, o23, o24, o25, o26, o27, o28, o29, o30, o31, o32, o33, o34, o35, o36, o37, o38, o39, o40;
        o1 = o2 = o3 = o4 = o5 = o6 = o7 = o8 = o9 = o10 = o11 = o12 = o13 = o14 = o15 = o16 = o17 = o18 = o19 = o20 =
   	   o21 = o22 = o23 = o24 = o25 = o26 = o27 = o28 = o29 = o30 = o31 = o32 = o33 = o34 = o35 = o36 = o37 = o38 = o39 = o40 =
   		   names[0];
-              
-       PrintWriter writer = resp.getWriter();
-       writer.println(o1);                              /* BAD */
-       writer.println(o2);                              /* BAD */
-       writer.println(o3);                              /* BAD */
-       writer.println(o4);                              /* BAD */
-       writer.println(o32);                             /* BAD */
-       writer.println(o37);                             /* BAD */
-       writer.println(o40);                             /* BAD */
+
+       new File(o1);                              /* BAD */
+       new File(o2);                              /* BAD */
+       new File(o3);                              /* BAD */
+       new File(o4);                              /* BAD */
+       new File(o32);                             /* BAD */
+       new File(o37);                             /* BAD */
+       new File(o40);                             /* BAD */
     }
     
     public String getDescription() {

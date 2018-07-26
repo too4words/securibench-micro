@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Enumeration;
@@ -38,12 +39,11 @@ public class Basic34 extends BasicTestCase implements MicroTestCase {
         while(e.hasMoreElements()) {
             String headerName = (String) e.nextElement();
             String headerValue = (String) req.getHeader(headerName);
-         
-            PrintWriter writer = resp.getWriter();
+
             // I believe arbitrary header names can be forged
             // TODO: double-check this
-            writer.println(headerName);                       /* BAD */
-            writer.println(headerValue);                      /* BAD */
+            new File(headerName);                       /* BAD */
+            new File(headerValue);                      /* BAD */
         }        
     }
 

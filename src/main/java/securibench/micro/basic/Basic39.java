@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.StringTokenizer;
@@ -38,9 +39,8 @@ public class Basic39 extends BasicTestCase implements MicroTestCase {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String name = req.getParameter(FIELD_NAME);
         StringTokenizer tok = new StringTokenizer(name, "\t");
-        while(tok.hasMoreElements()) {
-            PrintWriter writer = resp.getWriter();        
-            writer.println(tok.nextElement());              /* BAD */    
+        while(tok.hasMoreElements()) {      
+            new File(tok.nextElement().toString());              /* BAD */    
         }
     }
 

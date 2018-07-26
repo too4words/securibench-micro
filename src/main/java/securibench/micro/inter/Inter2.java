@@ -21,6 +21,7 @@
  */
 package securibench.micro.inter;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -37,16 +38,15 @@ public class Inter2 extends BasicTestCase implements MicroTestCase {
 
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String s1 = req.getParameter(FIELD_NAME);
-        
-        PrintWriter writer = resp.getWriter();
-        String s2 = id(s1, writer);
-        String s3 = id("abc", writer);
-        writer.println(s2);         /* BAD */   // Is this double-reporting?..
-        writer.println(s3);         /* OK */
+
+        String s2 = id(s1);
+        String s3 = id("abc");
+        new File(s2);         /* BAD */   // Is this double-reporting?..
+        new File(s3);         /* OK */
     }
     
-    private String id(String string, PrintWriter writer) {
-        writer.println(string); /* BAD */
+    private String id(String string) {
+        new File(string); /* BAD */
         
         return string;
     }

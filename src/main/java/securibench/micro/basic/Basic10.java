@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -42,9 +43,8 @@ public class Basic10 extends BasicTestCase implements MicroTestCase {
         StringBuffer b3 = b1;
         String s5 = b3.toString();
         String s6 = s5;
-        
-        PrintWriter writer = resp.getWriter();
-        writer.println(s6);    /* BAD */
+
+        new File(s6);    /* BAD */
     }
     
     public String getDescription() {

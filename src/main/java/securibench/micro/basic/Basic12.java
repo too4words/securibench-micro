@@ -20,6 +20,7 @@
  */
 package securibench.micro.basic;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
@@ -35,16 +36,15 @@ import securibench.micro.MicroTestCase;
 public class Basic12 extends BasicTestCase implements MicroTestCase {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String s1 = req.getParameter("name");
-        PrintWriter writer = resp.getWriter();
         boolean choice = new Random().nextBoolean();
         
         if(choice) {
-            writer.println(s1 + ":");   /* BAD */
+            new File(s1 + ":");   /* BAD */
         } else{
-            writer.println(s1 + ";");   /* BAD */
+            new File(s1 + ";");   /* BAD */
         }
         
-        writer.println("\n");           /* OK */
+        new File("\n");           /* OK */
     }
     
     public String getDescription() {

@@ -21,6 +21,7 @@
  */
 package securibench.micro.inter;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.http.HttpServletRequest;
@@ -35,7 +36,6 @@ import securibench.micro.MicroTestCase;
 public class Inter7 extends BasicTestCase implements MicroTestCase {
     private static final String FIELD_NAME = "name";
     private static String name;
-    private static PrintWriter writer;
     
     static class Base {
         public Base(String value) {
@@ -43,7 +43,7 @@ public class Inter7 extends BasicTestCase implements MicroTestCase {
             foo();
         }
         private void foo() {
-            writer.println(this.value);             /* BAD */
+            new File(this.value);             /* BAD */
         }
         public String toString() {
             return value;
@@ -60,7 +60,6 @@ public class Inter7 extends BasicTestCase implements MicroTestCase {
     
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         name = req.getParameter(FIELD_NAME);
-        writer = resp.getWriter();
 
         new ReflectivelyCreated(name);
     }
